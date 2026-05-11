@@ -30,3 +30,9 @@ E-mail: usuario@example.com
 Senha: 1q2w3e4r
 ```
 Este projeto é uma base sólida para quem deseja implementar e testar a lógica de autenticação em aplicações web.
+
+
+## Cenários
+
+Uma [lista com alguns cenários](cenarios.md) possíveis para testes.
+
