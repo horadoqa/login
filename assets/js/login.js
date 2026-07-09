@@ -17,7 +17,7 @@
 
         if (validUsers[username] && validUsers[username] === password) {
             // Redirecionar para index2.html se as credenciais estiverem corretas
-            window.location.href = "../pages/welcome.html";
+            window.location.href = "pages/welcome.html";
         } else {
             // Exibir mensagem de erro
             errorMessage.textContent = "E-mail ou senha inválidos!";
