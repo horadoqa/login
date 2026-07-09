@@ -125,6 +125,8 @@ body::before{
 
     width:min(900px,95%);
 
+    margin: 0 auto;
+
     padding:50px;
 
     border-radius:25px;
