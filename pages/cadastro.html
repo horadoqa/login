@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do QA - Cadastro</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="image-container">
+        <img src="../assets/images/hqa.png" alt="Hora do QA">
+        <h2>Hora do QA</h2>
+    </div>
+
+    <div class="login-container">
+
+        <h2>CADASTRO</h2>
+
+        <form id="registerForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Nome completo"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="E-mail"
+                required>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Senha"
+                minlength="8"
+                required>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirmar senha"
+                minlength="8"
+                required>
+
+            <button type="submit">
+                Criar Conta
+            </button>
+
+        </form>
+
+        <p id="message"></p>
+
+        <p style="margin-top:20px;color:#FFF;font-size:.9rem;">
+            Já possui uma conta?
+            <a href="../index.html" style="color:#60a5fa;text-decoration:none;font-weight:bold;">
+                Fazer login
+            </a>
+        </p>
+
+    </div>
+
+<script>
+
+const form = document.getElementById("registerForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const nome = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("password").value;
+    const confirmar = document.getElementById("confirmPassword").value;
+
+    const mensagem = document.getElementById("message");
+
+    mensagem.className = "";
+
+    if(nome === "" || email === "" || senha === "" || confirmar === ""){
+
+        mensagem.textContent = "Preencha todos os campos.";
+        mensagem.style.color = "#ff6b6b";
+        return;
+
+    }
+
+    if(senha.length < 8){
+
+        mensagem.textContent = "A senha deve possuir pelo menos 8 caracteres.";
+        mensagem.style.color = "#ff6b6b";
+        return;
+
+    }
+
+    if(senha !== confirmar){
+
+        mensagem.textContent = "As senhas não coincidem.";
+        mensagem.style.color = "#ff6b6b";
+        return;
+
+    }
+
+    mensagem.style.color = "#4ade80";
+    mensagem.textContent = "Cadastro realizado com sucesso!";
+
+    setTimeout(function(){
+
+        window.location.href="../index.html";
+
+    },1500);
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,16 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora do QA</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <script src="./assets/js/login.js"></script>
 </head>
 <body>
     <div class="image-container">
-        <img src="hqa.png" alt="Hora do QA">
+        <img src="./assets/images/hqa.png" alt="Hora do QA">
         <h2>Hora do QA</h2>
     </div>
 
@@ -20,9 +20,15 @@
         <input type="password" id="password" placeholder="Senha" required>
         <button type="submit" id="button" onclick="login()">Entrar</button>
         <p id="error-message" class="error"></p>
+        <p style="margin-top:20px;color:#FFF;font-size:.9rem;">
+            Não possui uma conta?
+            <a href="./pages/cadastro.html" style="color:#60a5fa;text-decoration:none;font-weight:bold;">
+                Criar conta
+            </a>
+        </p>
     </div>
 
-<script>
+<!-- <script>
     // Usuários e senhas pré-definidos
     const validUsers = {
         "usuario@example.com": "1q2w3e4r",
@@ -42,7 +48,7 @@
 
         if (validUsers[username] && validUsers[username] === password) {
             // Redirecionar para index2.html se as credenciais estiverem corretas
-            window.location.href = "welcome/index.html";
+            window.location.href = "home/welcome.html";
         } else {
             // Exibir mensagem de erro
             errorMessage.textContent = "E-mail ou senha inválidos!";
@@ -56,7 +62,7 @@
             login();
         }
     });
-</script>
+</script> -->
 
 </body>
 </html>

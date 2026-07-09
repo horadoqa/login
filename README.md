@@ -14,6 +14,32 @@ Este projeto consiste em uma página de login simples, desenvolvida para fins de
 - CSS
 - JavaScript
 
+## Estrutura
+
+```bash
+.
+├── README.md
+├── assets
+│   ├── css
+│   │   ├── style.css
+│   │   └── welcome.css
+│   ├── images
+│   │   └── hqa.png
+│   └── js
+│       ├── cadastro.js
+│       ├── login.js
+│       └── welcome.js
+├── docs
+│   ├── cenarios.md
+│   └── changelog.md
+├── index.html
+└── pages
+    ├── cadastro.html
+    └── welcome.html
+
+6 directories, 12 files
+```
+
 ## Como Executar
 
 1. Clone este repositório.
@@ -34,5 +60,5 @@ Este projeto é uma base sólida para quem deseja implementar e testar a lógica
 
 ## Cenários
 
-Uma [lista com alguns cenários](cenarios.md) possíveis para testes.
+Uma [lista com alguns cenários](./docs/cenarios.md) possíveis para testes.
 
