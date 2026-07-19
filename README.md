@@ -1,9 +1,15 @@
-# Página de Login para Testes Automatizados
+# Página de Cadastro/Login para Testes Automatizados
 
-Este projeto consiste em uma página de login simples, desenvolvida para fins de testes automatizados. A aplicação permite a autenticação de usuários com e-mails e senhas pré-definidos, possibilitando a simulação de cenários de login em testes de interface.
+Este projeto consiste em uma página de Cadastro e login, desenvolvida para fins de testes automatizados. A aplicação permite a autenticação de usuários com e-mails e senhas pré-definidos, possibilitando a simulação de cenários de login em testes de interface.
+
+<div align="center">
+    <img src="./assets/images/cadastro.png">
+    <img src="./assets/images/login.png">
+</div>
 
 ## Funcionalidades
 
+- **Cadastro com Nome, E-mail, Senha, Confirmação da Senha**: Os usuários podem inserir os dados para simular um Cadastro e serão redirecionados para a página de Login.
 - **Login com E-mail e Senha**: Os usuários podem inserir suas credenciais para realizar o login.
 - **Validação de Credenciais**: Mensagens de erro são exibidas quando as credenciais são inválidas ou se os campos estão vazios.
 - **Suporte a Testes Automatizados**: A estrutura da página é ideal para a implementação de testes automatizados, permitindo verificar a funcionalidade de login de forma eficaz.
@@ -24,7 +30,9 @@ Este projeto consiste em uma página de login simples, desenvolvida para fins de
 │   │   ├── style.css
 │   │   └── welcome.css
 │   ├── images
-│   │   └── hqa.png
+│   │   ├── cadastro.css
+│   │   ├── hqa.png
+│   │   └── login.png
 │   └── js
 │       ├── cadastro.js
 │       ├── login.js
