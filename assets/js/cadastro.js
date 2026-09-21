@@ -21,6 +21,17 @@ form.addEventListener("submit", function(e){
 
     }
 
+    // Validação do nome: permite apenas letras e espaços
+    const nomeValido = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+
+    if(!nomeValido.test(nome)){
+
+        mensagem.textContent = "O nome deve conter apenas letras.";
+        mensagem.style.color = "#ff6b6b";
+        return;
+
+    }
+
     if(senha.length < 8){
 
         mensagem.textContent = "A senha deve possuir pelo menos 8 caracteres.";

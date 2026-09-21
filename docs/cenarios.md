@@ -110,5 +110,3 @@ Pra quem é QA: login não é apenas uma tela.
 
 > Nunca subestime o simples.  
 > É exatamente nele que os maiores problemas costumam se esconder.
-
-
