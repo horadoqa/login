@@ -368,3 +368,538 @@ width:100%;
 }
 
 }
+
+/* ================================
+   SUBTÍTULO DAS SEÇÕES
+================================ */
+
+.section-subtitle {
+    text-align: center;
+    color: #a0aec0;
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+
+
+/* ================================
+   ANIMAÇÃO DOS CARDS
+================================ */
+
+.card,
+.tech-card {
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+}
+
+.card:hover,
+.tech-card:hover {
+
+    transform: translateY(-10px) scale(1.02);
+
+}
+
+
+/* ================================
+   ÍCONES DOS CARDS
+================================ */
+
+.card > i {
+
+    font-size: 45px;
+    margin-bottom: 15px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+}
+
+.card:hover > i {
+
+    transform: scale(1.15);
+
+    filter:
+        drop-shadow(0 0 8px currentColor)
+        drop-shadow(0 0 18px currentColor);
+
+}
+
+
+/* ================================
+   GITHUB
+================================ */
+
+.card .fa-github {
+
+    color: #ffffff;
+
+}
+
+.card:hover .fa-github {
+
+    color: #c084fc;
+
+}
+
+
+/* ================================
+   YOUTUBE
+================================ */
+
+.card .fa-youtube {
+
+    color: #ff0000;
+
+}
+
+.card:hover .fa-youtube {
+
+    color: #ff4d4d;
+
+    filter:
+        drop-shadow(0 0 8px #ff0000)
+        drop-shadow(0 0 18px #ff0000);
+
+}
+
+
+/* ================================
+   TECNOLOGIAS
+================================ */
+
+.tech-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: 40px auto 0;
+
+}
+
+
+.tech-card {
+
+    position: relative;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+}
+
+
+.tech-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+    left: -50%;
+
+    width: 200%;
+    height: 200%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.08),
+            transparent 60%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+}
+
+
+.tech-card:hover::before {
+
+    opacity: 1;
+
+}
+
+
+.tech-card i {
+
+    position: relative;
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+}
+
+
+.tech-card:hover i {
+
+    transform: scale(1.2);
+
+}
+
+
+/* ================================
+   CORES DAS TECNOLOGIAS
+================================ */
+
+.selenium i {
+    color: #43b02a;
+}
+
+.cypress i {
+    color: #69d3a7;
+}
+
+.playwright i {
+    color: #45ba4b;
+}
+
+.robot i {
+    color: #00c2a8;
+}
+
+.api i {
+    color: #00a8ff;
+}
+
+.postman i {
+    color: #ff6c37;
+}
+
+
+/* ================================
+   GLOW
+================================ */
+
+.selenium:hover {
+    border-color: #43b02a;
+    box-shadow: 0 0 25px rgba(67, 176, 42, 0.25);
+}
+
+.cypress:hover {
+    border-color: #69d3a7;
+    box-shadow: 0 0 25px rgba(105, 211, 167, 0.25);
+}
+
+.playwright:hover {
+    border-color: #45ba4b;
+    box-shadow: 0 0 25px rgba(69, 186, 75, 0.25);
+}
+
+.robot:hover {
+    border-color: #00c2a8;
+    box-shadow: 0 0 25px rgba(0, 194, 168, 0.25);
+}
+
+.api:hover {
+    border-color: #00a8ff;
+    box-shadow: 0 0 25px rgba(0, 168, 255, 0.25);
+}
+
+.postman:hover {
+    border-color: #ff6c37;
+    box-shadow: 0 0 25px rgba(255, 108, 55, 0.25);
+}
+
+
+/* ================================
+   BOTÕES
+================================ */
+
+.btn {
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.btn i {
+
+    margin-right: 8px;
+
+}
+
+
+/* ================================
+   ANIMAÇÃO DE ENTRADA
+================================ */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+.hero-content {
+
+    animation: fadeUp 0.8s ease forwards;
+
+}
+
+
+.section {
+
+    animation: fadeUp 0.8s ease;
+
+}
+
+
+/* ================================
+   EFEITO PULSANTE NO YOUTUBE
+================================ */
+
+.btn-secondary .fa-youtube {
+
+    animation: youtubePulse 2s infinite;
+
+}
+
+
+@keyframes youtubePulse {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+    }
+
+}
+
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 600px) {
+
+    .tech-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+
+    }
+
+    .tech-card {
+
+        padding: 25px 10px;
+
+    }
+
+    .tech-card i {
+
+        font-size: 32px;
+
+    }
+
+    .tech-card h3 {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* ================================
+   QUEM SOMOS
+================================ */
+
+.about-card {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: left;
+
+}
+
+
+.about-card h2 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.about-card p {
+
+    color: #cbd5e1;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+
+}
+
+
+.about-card strong {
+
+    color: #ffffff;
+
+}
+
+
+/* ================================
+   DESTAQUE FINAL
+================================ */
+
+.about-highlight {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 35px;
+
+    padding: 22px 25px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.15),
+            rgba(168, 85, 247, 0.10)
+        );
+
+    border: 1px solid rgba(139, 92, 246, 0.3);
+
+    box-shadow:
+        0 0 25px rgba(139, 92, 246, 0.08);
+
+}
+
+
+.about-highlight i {
+
+    font-size: 35px;
+
+    color: #a78bfa;
+
+    filter:
+        drop-shadow(0 0 8px #8b5cf6);
+
+}
+
+
+.about-highlight div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.about-highlight strong {
+
+    font-size: 18px;
+
+    color: #ffffff;
+
+}
+
+
+.about-highlight span {
+
+    color: #a78bfa;
+
+    font-size: 16px;
+
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 600px) {
+
+    .about-card p {
+
+        font-size: 15px;
+
+    }
+
+    .about-highlight {
+
+        padding: 18px;
+
+    }
+
+    .about-highlight i {
+
+        font-size: 28px;
+
+    }
+
+}
