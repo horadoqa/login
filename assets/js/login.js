@@ -1,33 +1,76 @@
 // Usuários e senhas pré-definidos
-    const validUsers = {
-        "usuario@example.com": "1q2w3e4r",
-        "usuario2@example.com": "1q2w3e4r"
-    };
+const validUsers = {
+    "usuario@example.com": "1q2w3e4r",
+    "usuario2@example.com": "1q2w3e4r"
+};
 
-    function login() {
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        const errorMessage = document.getElementById("error-message");
 
-        if (username === "" || password === "") {
-            errorMessage.textContent = "E-mail e senha são obrigatórios!";
-            errorMessage.classList.add("error");
-            return;
-        }
+// Recupera o cadastro salvo no localStorage
+const cadastro = JSON.parse(localStorage.getItem("cadastro"));
 
-        if (validUsers[username] && validUsers[username] === password) {
-            // Redirecionar para index2.html se as credenciais estiverem corretas
-            window.location.href = "pages/welcome.html";
-        } else {
-            // Exibir mensagem de erro
-            errorMessage.textContent = "E-mail ou senha inválidos!";
-            errorMessage.classList.add("error");
-        }
+
+// Função de login
+function login() {
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const errorMessage = document.getElementById("error-message");
+
+    // Limpa mensagem anterior
+    errorMessage.textContent = "";
+    errorMessage.classList.remove("error");
+
+
+    // Verifica campos vazios
+    if (username === "" || password === "") {
+
+        errorMessage.textContent = "E-mail e senha são obrigatórios!";
+        errorMessage.classList.add("error");
+        return;
+
     }
 
-    // Detectar a tecla Enter para enviar o formulário de login
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            login();
-        }
-    });
+
+    // Verifica usuários pré-definidos
+    if (validUsers[username] && validUsers[username] === password) {
+
+        window.location.href = "pages/welcome.html";
+        return;
+
+    }
+
+
+    // Verifica usuário cadastrado no localStorage
+    if (
+        cadastro &&
+        cadastro.email.toLowerCase() === username.toLowerCase() &&
+        cadastro.senha === password
+    ) {
+
+        // Salva o usuário atualmente logado
+        localStorage.setItem("usuarioLogado", JSON.stringify({
+            nome: cadastro.nome,
+            email: cadastro.email
+        }));
+
+        window.location.href = "pages/welcome.html";
+        return;
+
+    }
+
+
+    // Se nenhuma credencial for válida
+    errorMessage.textContent = "E-mail ou senha inválidos!";
+    errorMessage.classList.add("error");
+
+}
+
+
+// Detecta a tecla Enter
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+        login();
+    }
+
+});
