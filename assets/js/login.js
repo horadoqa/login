@@ -48,12 +48,15 @@ function login() {
     ) {
 
         // Salva o usuário atualmente logado
-        localStorage.setItem("usuarioLogado", JSON.stringify({
-            nome: cadastro.nome,
-            email: cadastro.email
-        }));
+        // localStorage.setItem("usuarioLogado", JSON.stringify({
+        //     nome: cadastro.nome,
+        //     email: cadastro.email
+        // }));
+
+        localStorage.removeItem("cadastro");
 
         window.location.href = "pages/welcome.html";
+        
         return;
 
     }
