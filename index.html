@@ -1,33 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hora do QA</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./assets/images/logo.png">
-    <script src="./assets/js/login.js"></script>
-</head>
-<body>
-    <div class="image-container">
-        <img src="./assets/images/logo.png" alt="Hora do QA">
-        <h2>Hora do QA</h2>
-    </div>
 
-    <div class="login-container">
-        <h2>LOGIN</h2>
-        <input type="email" id="username" placeholder="E-mail" required>
-        <input type="password" id="password" placeholder="Senha" required>
-        <button type="submit" id="button" onclick="login()">Entrar</button>
-        <p id="error-message" class="error"></p>
-        <p style="margin-top:20px;color:#FFF;font-size:.9rem;">
-            Não possui uma conta?
-            <a href="./pages/cadastro.html" style="color:#60a5fa;text-decoration:none;font-weight:bold;">
-                Criar conta
-            </a>
-        </p>
-    </div>
+    <!-- Tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Newsreader:ital,wght@1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/auth.css">
+
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
+
+    <script src="./assets/js/login.js" defer></script>
+
+</head>
+
+<body>
+    <main class="page">
+
+        <!-- IDENTIDADE DA MARCA -->
+        <section class="brand" aria-label="Hora do QA">
+
+            <div class="brand-mark">
+
+                <img src="./assets/images/logo.png" alt="Logo Hora do QA">
+
+            </div>
+
+
+            <div class="brand-content">
+
+                <span class="brand-kicker">
+                    QUALITY / TESTING
+                </span>
+
+                <h1>
+                    Hora do <em>QA</em>
+                </h1>
+
+                <p class="brand-description">
+                    Testar. Encontrar. Entender.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN -->
+        <section class="login-container" aria-labelledby="login-title">
+
+            <!-- CABEÇALHO -->
+            <div class="login-header">
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        STATUS: READY
+                    </span>
+
+                </div>
+
+
+                <span class="build">
+                    BUILD_001
+                </span>
+
+            </div>
+
+
+            <!-- TÍTULO -->
+            <div class="login-title">
+
+                <span class="eyebrow">
+                    ACCESS / 01
+                </span>
+
+                <h2 id="login-title">
+                    Entrar
+                </h2>
+
+                <p>
+                    Acesse seu espaço de testes.
+                </p>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+            <form id="login-form">
+
+                <div class="field">
+
+                    <label for="username">
+                        E-MAIL
+                    </label>
+
+                    <input type="email" id="username" name="username" placeholder="seu@email.com" autocomplete="email"
+                        required>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="password">
+                        SENHA
+                    </label>
+
+                    <input type="password" id="password" name="password" placeholder="••••••••"
+                        autocomplete="current-password" required>
+
+                </div>
+
+
+                <!--
+                IMPORTANTE:
+                O login.js existente utiliza login()
+                diretamente. Por isso mantemos
+                onclick="login()".
+            -->
+                <button type="button" id="button" onclick="login()">
+
+                    <span>
+                        Entrar
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- MENSAGEM DE ERRO -->
+            <p id="error-message" class="error" role="alert"></p>
+
+
+            <!-- DIVISOR -->
+            <div class="divider">
+
+                <span></span>
+
+                <small>
+                    NEW USER
+                </small>
+
+                <span></span>
+
+            </div>
+
+
+            <!-- CADASTRO -->
+            <p class="register">
+
+                Não possui uma conta?
+
+                <a href="./pages/cadastro.html">
+                    Criar conta
+                </a>
+
+            </p>
+
+
+            <!-- RODAPÉ TÉCNICO -->
+            <div class="login-footer">
+
+                <span>
+                    QA_SYSTEM
+                </span>
+
+                <span>
+                    v1.0.0
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- RODAPÉ DA PÁGINA -->
+        <footer class="page-footer">
+
+            <span>
+                <strong>PASS</strong>
+                // QUALITY MATTERS
+            </span>
+
+        </footer>
+
+    </main>
 
 </body>
+
 </html>
