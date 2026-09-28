@@ -1,0 +1,903 @@
+/* =========================================================
+HORA DO QA
+Identidade Editorial + Técnica + Humana
+========================================================= */
+
+/* ---------------------------------------------------------
+DESIGN TOKENS
+--------------------------------------------------------- */
+
+:root {
+
+    --green-deep: #0F3D2E;
+    --green-moss: #3F6F52;
+    --green-signal: #8FE3B0;
+
+    --gold: #C99A44;
+
+    --ivory: #F3EFE6;
+    --ink: #12201A;
+
+    --white: #ffffff;
+
+    --border-dark: rgba(243, 239, 230, 0.14);
+    --border-light: rgba(15, 61, 46, 0.18);
+
+    --surface-dark: rgba(18, 32, 26, 0.72);
+    --surface-light: rgba(243, 239, 230, 0.06);
+
+    --shadow:
+        0 24px 60px rgba(0, 0, 0, 0.28);
+
+    --transition:
+        180ms ease;
+
+
+}
+
+/* ---------------------------------------------------------
+RESET
+--------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+
+    font-family: 'Manrope', sans-serif;
+
+    color: var(--ivory);
+
+    background:
+        radial-gradient(circle at 15% 10%,
+            rgba(63, 111, 82, 0.28),
+            transparent 32%),
+        radial-gradient(circle at 90% 90%,
+            rgba(201, 154, 68, 0.08),
+            transparent 30%),
+        var(--ink);
+
+    overflow-x: hidden;
+
+
+}
+
+/* ---------------------------------------------------------
+BACKGROUND
+--------------------------------------------------------- */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(243, 239, 230, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(243, 239, 230, 0.025) 1px,
+            transparent 1px);
+
+    background-size: 48px 48px;
+
+    mask-image: linear-gradient(to bottom,
+            black,
+            transparent 90%);
+
+
+}
+
+/* ---------------------------------------------------------
+PAGE
+--------------------------------------------------------- */
+
+.page {
+
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 1120px);
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+    padding: 60px 32px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1fr) minmax(320px, 400px);
+
+    grid-template-rows: 1fr auto;
+
+    align-items: center;
+
+    column-gap: 100px;
+
+
+}
+
+/* ---------------------------------------------------------
+BRAND
+--------------------------------------------------------- */
+
+.brand {
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 480px;
+
+
+}
+
+.brand-mark {
+
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border-dark);
+
+    background: rgba(15, 61, 46, 0.45);
+
+
+}
+
+.brand-mark::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 72px;
+    height: 72px;
+
+    border: 1px solid rgba(143, 227, 176, 0.12);
+
+    transform: translate(7px, 7px);
+
+
+}
+
+.brand-mark img {
+
+    width: 52px;
+    height: 52px;
+
+    object-fit: contain;
+
+    position: relative;
+    z-index: 1;
+
+
+}
+
+/* ---------------------------------------------------------
+BRAND TYPOGRAPHY
+--------------------------------------------------------- */
+
+.brand-kicker {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--green-signal);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.12em;
+
+
+}
+
+.brand h1 {
+
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-family: 'Newsreader', serif;
+
+    font-size: clamp(3.8rem, 7vw, 6rem);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.04em;
+
+
+}
+
+.brand h1 em {
+
+    color: var(--green-signal);
+
+    font-weight: 400;
+
+
+}
+
+.brand-description {
+
+    margin: 24px 0 0;
+
+    color: rgba(243, 239, 230, 0.62);
+
+    font-size: 15px;
+
+    letter-spacing: 0.01em;
+
+
+}
+
+/* ---------------------------------------------------------
+LOGIN CARD
+--------------------------------------------------------- */
+
+.login-container {
+
+    width: 100%;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(63, 111, 82, 0.16),
+            rgba(18, 32, 26, 0.78));
+
+    border: 1px solid var(--border-dark);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+
+}
+
+/* ---------------------------------------------------------
+LOGIN HEADER
+--------------------------------------------------------- */
+
+.login-header {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--border-dark);
+
+
+}
+
+.status {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--green-signal);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+
+}
+
+.status-dot {
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--green-signal);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 3px rgba(143, 227, 176, 0.08);
+
+
+}
+
+.build {
+
+    color: rgba(243, 239, 230, 0.4);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 10px;
+
+
+}
+
+/* ---------------------------------------------------------
+LOGIN TITLE
+--------------------------------------------------------- */
+
+.login-title {
+
+    padding: 30px 0 24px;
+
+
+}
+
+.eyebrow {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--gold);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 0.1em;
+
+
+}
+
+.login-title h2 {
+
+    margin: 0;
+
+    color: var(--ivory);
+
+    font-family: 'Newsreader', serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    line-height: 1;
+
+
+}
+
+.login-title p {
+
+    margin: 12px 0 0;
+
+    color: rgba(243, 239, 230, 0.52);
+
+    font-size: 13px;
+
+
+}
+
+/* ---------------------------------------------------------
+FORM
+--------------------------------------------------------- */
+
+.field {
+
+    margin-bottom: 18px;
+
+
+}
+
+.field label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: rgba(243, 239, 230, 0.55);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+
+}
+
+input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border-dark);
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: rgba(243, 239, 230, 0.045);
+
+    color: var(--ivory);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        border-color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+
+
+}
+
+input::placeholder {
+
+    color: rgba(243, 239, 230, 0.28);
+
+
+}
+
+input:hover {
+
+    border-color:
+        rgba(143, 227, 176, 0.25);
+
+
+}
+
+input:focus {
+
+    border-color: var(--green-signal);
+
+    background:
+        rgba(143, 227, 176, 0.045);
+
+    box-shadow:
+        0 0 0 2px rgba(143, 227, 176, 0.06);
+
+
+}
+
+/* ---------------------------------------------------------
+BUTTON
+--------------------------------------------------------- */
+
+button {
+
+    width: 100%;
+    height: 50px;
+
+    margin-top: 4px;
+
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid var(--green-signal);
+
+    border-radius: 0;
+
+    background: var(--green-signal);
+
+    color: var(--green-deep);
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
+
+
+}
+
+button:hover {
+
+    background: transparent;
+
+    color: var(--green-signal);
+
+    transform: translateY(-1px);
+
+
+}
+
+button:active {
+
+    transform: translateY(0);
+
+
+}
+
+.button-arrow {
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 18px;
+
+
+}
+
+#message {
+    display: none;
+
+    margin: 14px 0 0;
+    padding: 10px 12px;
+
+    border-left: 2px solid var(--green-signal);
+
+    background: rgba(143, 227, 176, 0.06);
+
+    color: var(--green-signal);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    text-align: left;
+
+}
+
+#message:not(:empty) {
+    display: block;
+}
+
+/* ---------------------------------------------------------
+ERROR
+--------------------------------------------------------- */
+
+#error-message {
+
+    display: none;
+
+    margin: 14px 0 0;
+
+    padding: 10px 12px;
+
+    border-left: 2px solid #d96c6c;
+
+    background: rgba(217, 108, 108, 0.08);
+
+    color: #e89a9a;
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 11px;
+
+    text-align: left;
+
+
+}
+
+#error-message.error {
+
+    display: block;
+
+
+}
+
+/* ---------------------------------------------------------
+DIVIDER
+--------------------------------------------------------- */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 26px 0 20px;
+
+
+}
+
+.divider span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: var(--border-dark);
+
+
+}
+
+.divider small {
+
+    color: rgba(243, 239, 230, 0.3);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+
+
+}
+
+/* ---------------------------------------------------------
+REGISTER
+--------------------------------------------------------- */
+
+.register {
+
+    margin: 0;
+
+    color: rgba(243, 239, 230, 0.55);
+
+    font-size: 12px;
+
+    text-align: center;
+
+
+}
+
+.register a {
+
+    color: var(--ivory);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--gold);
+
+    transition: color var(--transition);
+
+
+}
+
+.register a:hover {
+
+    color: var(--green-signal);
+
+
+}
+
+/* ---------------------------------------------------------
+LOGIN FOOTER
+--------------------------------------------------------- */
+
+.login-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 28px;
+    padding-top: 14px;
+
+    border-top: 1px solid var(--border-dark);
+
+    color: rgba(243, 239, 230, 0.25);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.06em;
+
+
+}
+
+/* ---------------------------------------------------------
+PAGE FOOTER
+--------------------------------------------------------- */
+
+.page-footer {
+
+    grid-column: 1 / -1;
+
+    align-self: end;
+
+    padding-top: 50px;
+
+    color: rgba(243, 239, 230, 0.25);
+
+    font-family: 'JetBrains Mono', monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+
+
+}
+
+.page-footer strong {
+
+    color: var(--green-signal);
+
+    font-weight: 500;
+
+
+}
+
+/* ---------------------------------------------------------
+TABLETS
+--------------------------------------------------------- */
+
+@media (max-width: 850px) {
+
+    .page {
+
+        grid-template-columns:
+            1fr;
+
+        grid-template-rows:
+            auto auto 1fr;
+
+        justify-items: center;
+
+        row-gap: 50px;
+
+        padding: 50px 24px;
+
+    }
+
+
+    .brand {
+
+        max-width: 400px;
+
+        width: 100%;
+
+        text-align: center;
+
+        align-items: center;
+
+    }
+
+
+    .brand-mark {
+
+        margin-bottom: 24px;
+
+    }
+
+
+    .brand h1 {
+
+        font-size: clamp(3.5rem, 12vw, 5rem);
+
+    }
+
+
+    .login-container {
+
+        max-width: 400px;
+
+    }
+
+
+    .page-footer {
+
+        width: 100%;
+
+        padding-top: 30px;
+
+    }
+
+
+}
+
+/* ---------------------------------------------------------
+SMARTPHONES
+--------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .page {
+
+        padding:
+            35px 18px 25px;
+
+        row-gap: 35px;
+
+    }
+
+
+    .brand h1 {
+
+        font-size: 3.4rem;
+
+    }
+
+
+    .brand-description {
+
+        margin-top: 18px;
+
+    }
+
+
+    .brand-mark {
+
+        width: 62px;
+        height: 62px;
+
+    }
+
+
+    .brand-mark img {
+
+        width: 45px;
+        height: 45px;
+
+    }
+
+
+    .brand-mark::after {
+
+        width: 62px;
+        height: 62px;
+
+    }
+
+
+    .login-container {
+
+        padding: 24px 20px;
+
+    }
+
+
+    .login-title {
+
+        padding-top: 25px;
+
+    }
+
+
+    .login-title h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .page-footer {
+
+        text-align: center;
+
+    }
+
+
+}
