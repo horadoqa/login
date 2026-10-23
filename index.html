@@ -105,7 +105,7 @@
                         E-MAIL
                     </label>
 
-                    <input type="email" id="username" name="username" placeholder="seu@email.com" autocomplete="email"
+                    <input type="email" data-test="username" id="username" name="username" placeholder="seu@email.com" autocomplete="email"
                         required>
 
                 </div>
@@ -117,7 +117,7 @@
                         SENHA
                     </label>
 
-                    <input type="password" id="password" name="password" placeholder="••••••••"
+                    <input type="password" data-test="password" id="password" name="password" placeholder="••••••••"
                         autocomplete="current-password" required>
 
                 </div>
@@ -129,7 +129,7 @@
                 diretamente. Por isso mantemos
                 onclick="login()".
             -->
-                <button type="button" id="button" onclick="login()">
+                <button type="button" data-test="login-button" id="login-button" onclick="login()">
 
                     <span>
                         Entrar
@@ -145,7 +145,7 @@
 
 
             <!-- MENSAGEM DE ERRO -->
-            <p id="error-message" class="error" role="alert"></p>
+            <p data-test="error-message" id="error-message" class="error" role="alert"></p>
 
 
             <!-- DIVISOR -->
